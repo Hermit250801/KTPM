@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="T:\KTPM\19512861_MaiVanTruong_THTuan1\src\data\Person.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -44,10 +45,12 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="19512861_MaiVanTruong_THTuan2"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="19512861_MaiVanTruong_THTuan2"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
