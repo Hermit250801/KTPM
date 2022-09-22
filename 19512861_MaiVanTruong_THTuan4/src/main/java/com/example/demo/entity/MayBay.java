@@ -9,12 +9,14 @@ import javax.persistence.*;
 @Entity
 @Data
 @AllArgsConstructor
+
 @Builder
 @Embeddable
 @Table(name = "maybay")
 public class MayBay {
     @Id
     @Column(name = "MaMB")
+
     private Integer maMB;
 
     @Column(name = "Loai")
@@ -22,6 +24,13 @@ public class MayBay {
 
     @Column(name = "TamBay")
     private Integer tamBay;
+
+
+    public MayBay(Integer maMB) {
+        this.maMB = maMB;
+    }
+
+
 
     @Override
     public String toString() {

@@ -18,4 +18,22 @@ public interface NhanVienReponsitory extends CrudRepository<NhanVien, String> {
             "JOIN maybay m on m.mamb = c.maybay_mamb WHERE m.mamb = 727",nativeQuery = true)
     List<NhanVien> findNhanVien747();
 
+    @Query(value = "SELECT distinct manv FROM nhanvien\n" +
+            "                  JOIN chungnhan c on nhanvien.manv = c.nhanvien_manv\n" +
+            "                  JOIN maybay m on m.mamb = c.maybay_mamb\n" +
+            "WHERE nhanvien.manv IN (SELECT nhanvien_manv FROM chungnhan\n" +
+            "                                               JOIN maybay m2 on m2.mamb = chungnhan.maybay_mamb\n" +
+            "                                               where m2.loai LIKE 'Boeing%')\n" +
+            "    AND nhanvien.manv IN (SELECT nhanvien_manv FROM chungnhan\n" +
+            "                                                        JOIN maybay m2 on m2.mamb = chungnhan.maybay_mamb\n" +
+            "                          where m2.loai LIKE 'Airbus%')",nativeQuery = true)
+    List<String> findNhanVienBoeingAndAirbus();
+
+    @Query(value = "SELECT DISTINCT TEN FROM nhanvien\n" +
+            "    JOIN chungnhan c on nhanvien.manv = c.nhanvien_manv\n" +
+            "    JOIN maybay m on m.mamb = c.maybay_mamb\n" +
+            "WHERE nhanvien.manv IN (SELECT chungnhan.nhanvien_manv FROM chungnhan JOIN\n" +
+            " maybay m2 on m2.mamb = chungnhan.maybay_mamb\n" +
+            " WHERE m2.loai LIKE 'Boeing%')",nativeQuery = true)
+    List<String> findNhanVienBoeing();
 }

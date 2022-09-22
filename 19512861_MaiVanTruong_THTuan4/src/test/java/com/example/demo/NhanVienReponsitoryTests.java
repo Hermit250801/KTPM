@@ -35,4 +35,14 @@ public class NhanVienReponsitoryTests {
         System.out.println(nhanVienReponsitory.findNhanVien747());
     }
 
+    @Test
+    public void testCau11() {
+        System.out.println(nhanVienReponsitory.findNhanVienBoeingAndAirbus());
+    }
+
+    @Test
+    public void testCau15() {
+        System.out.println(nhanVienReponsitory.findNhanVienBoeing());
+    }
+
 }

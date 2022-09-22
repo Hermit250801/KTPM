@@ -18,4 +18,15 @@ public interface ChuyenBayReponsitory extends CrudRepository<ChuyenBay, String> 
     public List<ChuyenBay> findChuyenBaysSGNtoBMV();
     @Query(value = "SELECT (count(*)) FROM chuyenbay WHERE ga_di = 'SGN'",nativeQuery = true)
     public int findChuyenBayBySGN();
+
+    @Query(value = "SELECT * FROM chuyenbay where do_dai < 4168", nativeQuery = true)
+    List<ChuyenBay> findChuyenBayByVN280();
+
+    @Query(value = "SELECT * FROM chuyenbay WHERE gio_di > '12:00:00'", nativeQuery = true)
+    List<ChuyenBay> findChuyenBayByGioDiBefore12();
+
+    @Query(value = "SELECT * FROM chuyenbay WHERE ga_di like ?1 and gio_di > '12:00:00'", nativeQuery = true)
+    List<ChuyenBay> findChuyenBayByGaDiGioBefore12(String gaDi);
+
+
 }

@@ -45,4 +45,24 @@ public class ChuyenBayReponsitoryTests {
     }
 
 
+    @Test
+    public void testCau14() {
+        System.out.println(chuyenBayReponsitory.findChuyenBayByVN280());
+    }
+
+    @Test
+    public void testCau20() {
+        System.out.println(chuyenBayReponsitory.findChuyenBayByGioDiBefore12());
+    }
+
+    @Test
+    public void testCau21() {
+
+        System.out.println("Ga Đi SGN: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("SGN"));
+        System.out.println("Ga Đi HAN: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("HAN"));
+        System.out.println("Ga Đi DAD: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("DAD"));
+        System.out.println("Ga Đi VII: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("VII"));
+        System.out.println("Ga Đi PXU: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("PXU"));
+        System.out.println("Ga Đi UIH: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("UIH"));
+    }
 }
