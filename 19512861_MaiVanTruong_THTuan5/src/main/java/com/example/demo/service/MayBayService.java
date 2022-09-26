@@ -26,4 +26,9 @@ public class MayBayService {
         List<Integer> mayBays = mayBayReponsitory.findMayBaysByNV();
         return mayBays;
     }
+
+    public List<String> mayBayCau16() {
+        List<String> mayBays = mayBayReponsitory.loaiMayBayCoPhiCongLai();
+        return mayBays;
+    }
 }

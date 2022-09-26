@@ -32,4 +32,14 @@ public class NhanVienController {
     public List<NhanVien> luongNVCau10() {
         return nhanVienService.listNVCau10();
     }
+
+    @GetMapping("/nhanviencau12")
+    public List<String> nhanVienCau12() {
+        return nhanVienService.listNVCau12();
+    }
+
+    @GetMapping("/nhanviencau15")
+    public List<String> nhanVienCau15() {
+        return nhanVienService.listNVCau15();
+    }
 }

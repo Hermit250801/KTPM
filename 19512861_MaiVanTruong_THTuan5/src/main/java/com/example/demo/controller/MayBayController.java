@@ -27,4 +27,9 @@ public class MayBayController {
     public List<Integer> listMayBayCau11() {
         return mayBayService.mayBayCau11();
     }
+
+    @GetMapping("/maybaycau16")
+    public List<String> listMayBayCau16() {
+        return mayBayService.mayBayCau16();
+    }
 }

@@ -31,4 +31,24 @@ public class ChuyenBayService {
        List<ChuyenBay> chuyenBays = chuyenBayReponsitory.findChuyenBaysBySGN();
         return (List<ChuyenBay>) chuyenBayReponsitory.saveAll(chuyenBays);
     }
+
+    public List<ChuyenBay> chuyenBayCau13() {
+        List<ChuyenBay> chuyenBays = chuyenBayReponsitory.findChuyenBayByVN280();
+        return (List<ChuyenBay>) chuyenBayReponsitory.saveAll(chuyenBays);
+    }
+
+    public List<ChuyenBay> chuyenBayCau14() {
+        List<ChuyenBay> chuyenBays = chuyenBayReponsitory.chuyenBayDuoCBayBoiAirbus320();
+        return (List<ChuyenBay>) chuyenBayReponsitory.saveAll(chuyenBays);
+    }
+
+    public List<ChuyenBay> chuyenBayCau17() {
+        List<ChuyenBay> chuyenBays = chuyenBayReponsitory.lstChuyenBayDiThang();
+        return (List<ChuyenBay>) chuyenBayReponsitory.saveAll(chuyenBays);
+    }
+
+    public List<String> chuyenBayCau18() {
+        List<String> chuyenBays = chuyenBayReponsitory.getGaDi();
+        return chuyenBays;
+    }
 }

@@ -31,4 +31,14 @@ public class NhanVienService {
         List<NhanVien> listNhanVien = nhanVienReponsitory.findNhanVien747();
         return listNhanVien;
     }
+
+    public List<String> listNVCau12() {
+        List<String> listNhanVien = nhanVienReponsitory.findNhanVienBoeingAndAirbus();
+        return listNhanVien;
+    }
+
+    public List<String> listNVCau15() {
+        List<String> listNhanVien = nhanVienReponsitory.findNhanVienBoeing();
+        return listNhanVien;
+    }
 }
