@@ -45,4 +45,33 @@ public class NhanVienReponsitoryTests {
         System.out.println(nhanVienReponsitory.findNhanVienBoeing());
     }
 
+    @Test
+    public void testCau22() {
+        System.out.println(nhanVienReponsitory.lstMaNVChiLaiDuoc3LoaiMB());
+    }
+
+    @Test
+    public void testCau23() {
+        System.out.println(nhanVienReponsitory.lstNhanVienLaiHon3LoaiMB());
+    }
+
+    @Test
+    public void testCau24() {
+        System.out.println(nhanVienReponsitory.lstMaNVVaTongLoaiMB());
+    }
+    @Test
+    public void testCau25() {
+        System.out.println(nhanVienReponsitory.lstNhanVienKhongPhaiPhiCong());
+    }
+
+    @Test
+    public void testCau26() {
+        System.out.println(nhanVienReponsitory.getMaNVCoLuongCaoNhat());
+    }
+
+    @Test
+    public void testCau27() {
+        System.out.println(nhanVienReponsitory.getTongLuongPhiCong());
+    }
+
 }

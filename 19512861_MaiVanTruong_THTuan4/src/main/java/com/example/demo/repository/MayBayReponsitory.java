@@ -22,6 +22,12 @@ public interface MayBayReponsitory extends CrudRepository<MayBay, Integer> {
             " WHERE n.ten LIKE 'Nguyen%' ", nativeQuery = true)
     List<Integer> findMayBaysByNV();
 
+    @Query(value = "select  mamb, Loai, COUNT(n.manv) from maybay\n" +
+            "                   join chungnhan c on maybay.mamb = c.maybay_mamb\n" +
+            "                   join nhanvien n on n.manv = c.nhanvien_manv\n" +
+            "group by maybay.loai",nativeQuery = true)
+    public List<String> loaiMayBayCoPhiCongLai();
+
     @Query(value = "SELECT mamb, loai, COUNT(N.manv) FROM maybay\n" +
             "    JOIN chungnhan c on maybay.mamb = c.maybay_mamb\n" +
             "    JOIN nhanvien n on n.manv = c.nhanvien_manv\n" +

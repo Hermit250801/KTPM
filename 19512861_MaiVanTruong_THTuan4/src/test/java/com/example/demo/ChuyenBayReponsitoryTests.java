@@ -51,6 +51,21 @@ public class ChuyenBayReponsitoryTests {
     }
 
     @Test
+    public void testCau17() {
+        System.out.println(chuyenBayReponsitory.lstChuyenBayDiThang());
+    }
+
+    @Test
+    public void testCau18() {
+        System.out.println(chuyenBayReponsitory.getGaDi());
+    }
+
+    @Test
+    public void testCau19() {
+        System.out.println(chuyenBayReponsitory.lstTongChiPhi());
+    }
+
+    @Test
     public void testCau20() {
         System.out.println(chuyenBayReponsitory.findChuyenBayByGioDiBefore12());
     }
@@ -64,5 +79,10 @@ public class ChuyenBayReponsitoryTests {
         System.out.println("Ga Đi VII: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("VII"));
         System.out.println("Ga Đi PXU: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("PXU"));
         System.out.println("Ga Đi UIH: \n" + chuyenBayReponsitory.findChuyenBayByGaDiGioBefore12("UIH"));
+    }
+
+    @Test
+    public void testCau28() {
+        System.out.println(chuyenBayReponsitory.lstChuyenBayBayBangBoeing());
     }
 }
