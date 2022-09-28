@@ -41,4 +41,34 @@ public class NhanVienService {
         List<String> listNhanVien = nhanVienReponsitory.findNhanVienBoeing();
         return listNhanVien;
     }
+
+    public List<String> listNVCau22() {
+        List<String> listNhanVien = nhanVienReponsitory.lstMaNVChiLaiDuoc3LoaiMB();
+        return listNhanVien;
+    }
+
+    public List<Object[]> listNVCau23() {
+        List<Object[]> listNhanVien = nhanVienReponsitory.lstNhanVienLaiHon3LoaiMB();
+        return listNhanVien;
+    }
+
+    public List<Object[]> listNVCau24() {
+        List<Object[]> listNhanVien = nhanVienReponsitory.lstMaNVVaTongLoaiMB();
+        return listNhanVien;
+    }
+
+    public List<Object[]> listNVCau25() {
+        List<Object[]> listNhanVien = nhanVienReponsitory.lstNhanVienKhongPhaiPhiCong();
+        return listNhanVien;
+    }
+
+    public List<Object[]> listNVCau26() {
+        List<Object[]> listNhanVien = nhanVienReponsitory.getMaNVCoLuongCaoNhat();
+        return listNhanVien;
+    }
+
+    public int listNVCau27() {
+       int listNhanVien = nhanVienReponsitory.getTongLuongPhiCong();
+       return listNhanVien;
+    }
 }

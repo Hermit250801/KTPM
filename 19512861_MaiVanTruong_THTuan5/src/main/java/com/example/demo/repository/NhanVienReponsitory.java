@@ -42,4 +42,35 @@ public interface NhanVienReponsitory extends CrudRepository<NhanVien, String> {
             " maybay m2 on m2.mamb = chungnhan.maybay_mamb\n" +
             " WHERE m2.loai LIKE 'Boeing%')",nativeQuery = true)
     List<String> findNhanVienBoeing();
+
+    @Query(value = "select manv from nhanvien\n" +
+            "    join chungnhan c on nhanvien.manv = c.nhanvien_manv\n" +
+            "    join maybay m on m.mamb = c.maybay_mamb\n" +
+            "group by nhanvien.manv having COUNT(m.loai) = 3",nativeQuery = true)
+    public List<String> lstMaNVChiLaiDuoc3LoaiMB();
+    @Query(value = "select nv.manv, count(loai) from nhanvien nv\n" +
+            "        join chungnhan c on nv.MaNV = c.nhanvien_manv\n" +
+            "        join maybay m on m.mamb = c.maybay_mamb\n" +
+            "        group by nv.MaNV", nativeQuery = true)
+    public List<Object[]> lstMaNVVaTongLoaiMB();
+
+    @Query(value = "select nv.manv, max(tam_bay) from nhanvien nv\n" +
+            "    join chungnhan c on nv.MaNV = c.nhanvien_manv\n" +
+            "    join maybay m on m.MaMB = c.maybay_mamb\n" +
+            "    group by nv.MaNV\n" +
+            "    having count(m.Loai) >= 3",nativeQuery = true)
+    public List<Object[]> lstNhanVienLaiHon3LoaiMB();
+
+    @Query(value = "select  manv,ten from nhanvien\n" +
+            "        where manv not in (select nhanvien_manv from chungnhan)",nativeQuery = true)
+    public List<Object[]> lstNhanVienKhongPhaiPhiCong();
+
+    @Query(value = "select manv,ten,luong\n" +
+            "    from nhanvien where luong in (select MAX(luong) from nhanvien)",nativeQuery = true)
+    public List<Object[]> getMaNVCoLuongCaoNhat();
+
+    @Query(value = "select SUM(luong) from nhanvien\n" +
+            "            where manv in (select nhanvien_manv from chungnhan)",nativeQuery = true)
+    public int getTongLuongPhiCong();
+
 }

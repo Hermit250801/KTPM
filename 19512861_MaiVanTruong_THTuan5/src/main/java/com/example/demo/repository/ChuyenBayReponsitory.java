@@ -32,7 +32,7 @@ public interface ChuyenBayReponsitory extends CrudRepository<ChuyenBay, String> 
     @Query(value = "select * from chuyenbay where ga_di in (select ga_den from chuyenbay) and ga_den in (select ga_di from chuyenbay)", nativeQuery = true)
     public List<ChuyenBay> lstChuyenBayDiThang();
 
-    @Query(value = "SELECT * FROM chuyenbay WHERE gio_di > '12:00:00'", nativeQuery = true)
+    @Query(value = "SELECT * FROM chuyenbay WHERE gio_di < '12:00:00'", nativeQuery = true)
     List<ChuyenBay> findChuyenBayByGioDiBefore12();
 
     @Query(value = "SELECT * FROM chuyenbay WHERE ga_di like ?1 and gio_di > '12:00:00'", nativeQuery = true)
@@ -40,5 +40,15 @@ public interface ChuyenBayReponsitory extends CrudRepository<ChuyenBay, String> 
 
     @Query(value = "select ga_di, COUNT(ga_di) from chuyenbay group by ga_di",nativeQuery = true)
     public List<String> getGaDi();
+
+    @Query(value = "select  ga_di, SUM(chi_phi) as \"Tong Chi Phi\" from chuyenbay group by ga_di",nativeQuery = true)
+    public List<String> lstTongChiPhi();
+
+    @Query(value = "select * from chuyenbay where chuyenbay.gio_di < '12:00' group by ga_di", nativeQuery = true)
+    public List<ChuyenBay> lstChuyenBayKhoiHanhTruoc12hTaiMoiGa();
+
+    @Query(value = "select distinct cb.* from chuyenbay cb, maybay mb\n" +
+            "            where cb.do_dai < mb.tam_bay and Loai  Like 'Boeing%'",nativeQuery = true)
+    public List<ChuyenBay> lstChuyenBayBayBangBoeing();
 
 }

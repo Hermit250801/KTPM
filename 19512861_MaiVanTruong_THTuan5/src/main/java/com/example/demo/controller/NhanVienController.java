@@ -42,4 +42,34 @@ public class NhanVienController {
     public List<String> nhanVienCau15() {
         return nhanVienService.listNVCau15();
     }
+
+    @GetMapping("/nhanviencau22")
+    public List<String> nhanVienCau22() {
+        return nhanVienService.listNVCau22();
+    }
+
+    @GetMapping("/nhanviencau23")
+    public List<Object[]> nhanVienCau23() {
+        return nhanVienService.listNVCau23();
+    }
+
+    @GetMapping("/nhanviencau24")
+    public List<Object[]> nhanVienCau24() {
+        return nhanVienService.listNVCau24();
+    }
+    @GetMapping("/nhanviencau25")
+    public List<Object[]> nhanVienCau25() {
+        return nhanVienService.listNVCau25();
+    }
+
+    @GetMapping("/nhanviencau26")
+    public List<Object[]> nhanVienCau26() {
+        return nhanVienService.listNVCau26();
+    }
+
+    @GetMapping("/nhanviencau27")
+    public int nhanVienCau27() {
+        return nhanVienService.listNVCau27();
+    }
+
 }

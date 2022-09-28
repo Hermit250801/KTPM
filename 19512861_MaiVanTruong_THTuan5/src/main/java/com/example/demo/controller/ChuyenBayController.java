@@ -52,4 +52,24 @@ public class ChuyenBayController {
     public List<String> listChuyenBayCau18() {
         return chuyenBayService.chuyenBayCau18();
     }
+
+    @GetMapping("/chuyenBayCau19")
+    public List<String> listChuyenBayCau19() {
+        return chuyenBayService.chuyenBayCau19();
+    }
+
+    @GetMapping("/chuyenBayCau20")
+    public List<ChuyenBay> listChuyenBayCau20() {
+        return chuyenBayService.chuyenBayCau20();
+    }
+
+    @GetMapping("/chuyenBayCau21")
+    public List<ChuyenBay> listChuyenBayCau21() {
+        return chuyenBayService.chuyenBayCau21();
+    }
+
+    @GetMapping("/chuyenBayCau28")
+    public List<ChuyenBay> listChuyenBayCau28() {
+        return chuyenBayService.chuyenBayCau28();
+    }
 }
