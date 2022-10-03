@@ -31,7 +31,7 @@ public class QueueReceiver {
 		ConnectionFactory factory=(ConnectionFactory)obj;
 		//lookup destination
 		Destination destination
-		=(Destination) ctx.lookup("dynamicQueues/maiVanTruong");
+		=(Destination) ctx.lookup("dynamicQueues/admin");
 		//tạo connection
 		Connection con=factory.createConnection("admin","admin");
 		//nối đến MOM

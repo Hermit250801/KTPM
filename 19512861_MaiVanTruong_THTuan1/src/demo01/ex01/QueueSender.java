@@ -31,7 +31,7 @@ public class QueueSender {
 		(ConnectionFactory)ctx.lookup("ConnectionFactory");
 		//lookup destination. (If not exist-->ActiveMQ create once)
 		Destination destination=
-		(Destination) ctx.lookup("dynamicQueues/maiVanTruong");
+		(Destination) ctx.lookup("dynamicQueues/admin");
 		//get connection using credential
 		Connection con=factory.createConnection("admin","admin");
 		//connect to MOM
