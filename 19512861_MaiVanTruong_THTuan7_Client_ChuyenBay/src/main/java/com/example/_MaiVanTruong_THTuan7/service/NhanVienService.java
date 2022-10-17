@@ -54,7 +54,8 @@ public class NhanVienService {
         List<Object[]> listNV = nhanViens.getBody();
         listNV.forEach(item -> {
             System.out.println(item);
-        });return listNV;
+        });
+        return listNV;
     }
 
 

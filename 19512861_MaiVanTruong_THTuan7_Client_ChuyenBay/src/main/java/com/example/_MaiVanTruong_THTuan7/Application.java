@@ -40,7 +40,7 @@ public class Application {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			chuyenBayService.chuyenBayCau20();
+			chuyenBayService.chuyenBayCau28();
 		};
 	}
 
