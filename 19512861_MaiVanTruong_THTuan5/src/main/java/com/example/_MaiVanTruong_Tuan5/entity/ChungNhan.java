@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @Builder
-
 @Table(name = "chungnhan")
 public class ChungNhan {
     @Id
