@@ -1,5 +1,7 @@
-FROM openjdk:8
+FROM maven:3.8.6-jdk-8
 
-COPY target/19512861_MaiVanTruong_Tuan5-0.0.1-SNAPSHOT.jar app.jar
+WORKDIR /19512861_MaiVanTruong_THTuan5
+COPY . .
+RUN mvn clean install
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+CMD mvn spring-boot:run

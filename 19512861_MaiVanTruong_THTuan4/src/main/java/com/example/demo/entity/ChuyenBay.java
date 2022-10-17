@@ -4,7 +4,7 @@ import lombok.*;
 import org.springframework.data.jdbc.repository.query.Modifying;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Time;
 
 
 @NoArgsConstructor
@@ -17,7 +17,6 @@ import java.sql.Date;
 public class ChuyenBay {
     @Id
     @Column(name = "MaCB")
-
     private String maCB;
 
     @Column(name = "GaDi")
@@ -30,10 +29,10 @@ public class ChuyenBay {
     private Integer doDai;
 
     @Column(name = "GioDi")
-    private Date gioDi;
+    private Time gioDi;
 
     @Column(name = "GioDen")
-    private Date gioDen;
+    private Time gioDen;
 
     @Column(name = "ChiPhi")
     private Integer chiPhi;

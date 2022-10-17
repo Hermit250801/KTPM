@@ -13,6 +13,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.Date;
+
+import static com.fasterxml.jackson.databind.type.LogicalType.DateTime;
+
 
 @SpringBootApplication
 public class DemoApplication {
@@ -21,24 +27,24 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-//	private void insertChuyenBay(ChuyenBayReponsitory reponsitory) {
-//		reponsitory.save(new ChuyenBay("VN269", "HAN", "CXR", 1262, "14:10:00", "15:50:00", 202));
-//		reponsitory.save(new ChuyenBay("VN276", "DAD", "CXR", 1283, "09:00:00", "12:00:00", 203));
-//		reponsitory.save(new ChuyenBay("VN280", "SGN", "HPH", 11979, "06:00:00", "08:00:00", 1279));
-//		reponsitory.save(new ChuyenBay("VN315", "HAN", "DAD", 134, "11:45:00", "13:00:00", 112));
-//		reponsitory.save(new ChuyenBay("VN317", "HAN", "UIH", 827, "15:00:00", "16:15:00", 190));
-//		reponsitory.save(new ChuyenBay("VN320", "SGN", "DAD", 2798, "06:00:00", "07:10:00", 221));
-//		reponsitory.save(new ChuyenBay("VN338", "SGN", "BMV", 4081, "15:25:00", "16:25:00", 375));
-//		reponsitory.save(new ChuyenBay("VN374", "HAN", "VII", 510, "11:40:00", "13:25:00", 120));
-//		reponsitory.save(new ChuyenBay("VN375", "VII", "CXR", 752, "14:15:00", "16:00:00", 181));
-//		reponsitory.save(new ChuyenBay("VN431", "SGN", "CAH", 3693, "05:55:00", "06:55:00", 236));
-//		reponsitory.save(new ChuyenBay("VN440", "SGN", "BMV", 4081, "18:30:00", "19:30:00", 426));
-//		reponsitory.save(new ChuyenBay("VN464", "SGN", "DLI", 2002, "07:20:00", "08:05:00", 225));
-//		reponsitory.save(new ChuyenBay("VN474", "PXU", "PQC", 1586, "08:40:00", "11:20:00", 102));
-//		reponsitory.save(new ChuyenBay("VN476", "UIH", "PQC", 485, "09:15:00", "11:50:00", 117));
-//		reponsitory.save(new ChuyenBay("VN651", "DAD", "SGN", 2798, "19:30:00", "08:00:00", 221));
-//		reponsitory.save(new ChuyenBay("VN741", "HAN", "PXU", 395, "06:30:00", "08:30:00", 120));
-//	}
+	private void insertChuyenBay(ChuyenBayReponsitory reponsitory) {
+		//reponsitory.save(new ChuyenBay("VN269", "HAN", "CXR", 1262, Time.valueOf("14:10:00"), Time.valueOf("15:50:00"), 202));
+		reponsitory.save(new ChuyenBay("VN276", "DAD", "CXR", 1283, Time.valueOf("09:00:00"), Time.valueOf("12:00:00"), 203));
+		reponsitory.save(new ChuyenBay("VN280", "SGN", "HPH", 11979, Time.valueOf("06:00:00"), Time.valueOf("08:00:00"), 1279));
+		reponsitory.save(new ChuyenBay("VN315", "HAN", "DAD", 134, Time.valueOf("11:45:00"), Time.valueOf("13:00:00"), 112));
+		reponsitory.save(new ChuyenBay("VN317", "HAN", "UIH", 827, Time.valueOf("15:00:00"), Time.valueOf("16:15:00"), 190));
+		reponsitory.save(new ChuyenBay("VN320", "SGN", "DAD", 2798, Time.valueOf("06:00:00"), Time.valueOf("07:10:00"), 221));
+		reponsitory.save(new ChuyenBay("VN338", "SGN", "BMV", 4081, Time.valueOf("15:25:00"), Time.valueOf("16:25:00"), 375));
+		reponsitory.save(new ChuyenBay("VN374", "HAN", "VII", 510, Time.valueOf("11:40:00"), Time.valueOf("13:25:00"), 120));
+		reponsitory.save(new ChuyenBay("VN375", "VII", "CXR", 752, Time.valueOf("14:15:00"), Time.valueOf("16:00:00"), 181));
+		reponsitory.save(new ChuyenBay("VN431", "SGN", "CAH", 3693, Time.valueOf("05:55:00"), Time.valueOf("06:55:00"), 236));
+		reponsitory.save(new ChuyenBay("VN440", "SGN", "BMV", 4081, Time.valueOf("18:30:00"), Time.valueOf("19:30:00"), 426));
+		reponsitory.save(new ChuyenBay("VN464", "SGN", "DLI", 2002, Time.valueOf("07:20:00"), Time.valueOf("08:05:00"), 225));
+		reponsitory.save(new ChuyenBay("VN474", "PXU", "PQC", 1586, Time.valueOf("08:40:00"), Time.valueOf("11:20:00"), 102));
+		reponsitory.save(new ChuyenBay("VN476", "UIH", "PQC", 485, Time.valueOf("09:15:00"), Time.valueOf("11:50:00"), 117));
+		reponsitory.save(new ChuyenBay("VN651", "DAD", "SGN", 2798, Time.valueOf("19:30:00"), Time.valueOf("08:00:00"), 221));
+		reponsitory.save(new ChuyenBay("VN741", "HAN", "PXU", 395, Time.valueOf("06:30:00"), Time.valueOf("08:30:00"), 120));
+	}
 	private void insertNhanVien(NhanVienReponsitory reponsitory) {
 		reponsitory.save(new NhanVien("011564812", "Ton Van Quy", 153972));
 		reponsitory.save(new NhanVien("141582651", "Doan Thi Mai", 178345));

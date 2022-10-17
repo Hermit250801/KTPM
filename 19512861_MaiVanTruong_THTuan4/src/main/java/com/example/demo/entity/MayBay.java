@@ -16,7 +16,6 @@ import javax.persistence.*;
 public class MayBay {
     @Id
     @Column(name = "MaMB")
-
     private Integer maMB;
 
     @Column(name = "Loai")
