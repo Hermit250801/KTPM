@@ -15,9 +15,9 @@ public class SpringCloudConfig {
                         .uri("http://localhost:8081/")
                         .id("chuyenBayService"))
 
-                .route(r -> r.path("/consumer/**")
+                .route(r -> r.path("/baymay/**")
                         .uri("http://localhost:8082/")
-                        .id("consumerModule"))
+                        .id("mayBayService"))
                 .build();
     }
 
